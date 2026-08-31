@@ -213,18 +213,19 @@
               if (iframe) {
                 iframe.allow = 'autoplay; fullscreen; picture-in-picture';
                 iframe.allowFullscreen = true;
+                player.unMute();
               }
 
               const updateStatus = (label) => {
                 status.textContent = `${label} · ${getBufferText(player)}`;
                 status.hidden = false;
               };
-
+/*
               if (!muted) {
                 player.unMute();
                 player.setVolume(100);
               }
-
+*/
               updateStatus(`Player ready; starting in ${delayStartSeconds}s`);
               window.setInterval(() => {
                 if (!autoplayBlocked) {
